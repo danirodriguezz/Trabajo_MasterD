@@ -10,6 +10,9 @@ class CitasController
 {
     public static function crear(Router $router)
     {
+        if(!isAdmin()) {
+            header("Location: /");
+        }
         $usuarios = UsuarioLogin::whereAll("rol", "user");
         $cita = new Cita;
         $errores = [];
@@ -32,6 +35,9 @@ class CitasController
 
     public static function actualizar(Router $router)
     {
+        if(!isAdmin()) {
+            header("Location: /");
+        }
         $id = validarORedireccionar("/admin");
         $cita = Cita::find($id);
         $usuarioLogin = UsuarioLogin::where("idUser", $cita->idUser);

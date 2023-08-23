@@ -9,7 +9,9 @@ use MVC\Router;
 
 class UsuariosController {
     public static function index(Router $router) {
-        session_start();
+        if(!isAdmin()) {
+            header("Location: /");
+        }
         $idUser = $_SESSION["idUser"];
         $resultado = $_GET["resultado"] ?? null;
         // Consulta personalizada para optener informacion de los administradores
@@ -37,6 +39,9 @@ class UsuariosController {
     }
 
     public static function crear(Router $router) {
+        if(!isAdmin()) {
+            header("Location: /");
+        }
         $errores = [];
         if($_SERVER["REQUEST_METHOD"] == "POST") {
             $usuario = new Usuario($_POST);
@@ -68,6 +73,9 @@ class UsuariosController {
     }
 
     public static function actualizar(Router $router) {
+        if(!isAdmin()) {
+            header("Location: /");
+        }
         $id = validarORedireccionar("/admin");
         $errores = [];
         $usuario = Usuario::find($id);
