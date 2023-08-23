@@ -1,0 +1,45 @@
+@use 'base/variables' as v;
+
+.inicio {
+    background-image: url(../img/header.jpg);
+}
+
+
+.header {
+    background-color: v.$grisOscuro;
+    padding: 1rem 0 3rem 0;
+    .logotipo {
+        height: 5rem;
+    }
+    &.inicio {
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        @include tablet {
+            min-height: 70rem;
+        }
+        .contenido-header {
+            @include tablet {
+                min-height: 70rem;
+            }
+            @include telefono {
+                h1 {
+                    text-align: left;
+                }
+            }
+        }
+    }
+}
+
+.contenido-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    h1 {
+        text-align: center;
+        color: $blanco;
+        font-weight: $bold;
+        max-width: 60rem;
+    }
+}

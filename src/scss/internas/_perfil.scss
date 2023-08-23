@@ -1,0 +1,39 @@
+.informacion-usuario {
+    display: block;
+}
+@include tablet {
+    .informacion-usuario {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+.actualizar {
+    display: flex;
+    justify-content: flex-end;
+}
+.citas {
+    margin-top: 4rem;
+    h2 {
+        margin: 0;
+    }
+    .citas-pendientes,
+    .citas-pasadas {
+        h3 {
+            text-align: left;
+            margin: 0;
+        }
+        .fechaCita {
+            border-top: 1px solid $grisOscuro;
+        }
+    }
+    .citas-pendientes {
+        margin-top: 3rem;
+        margin-bottom: 5rem;
+    }
+    .citas-pasadas {
+        .descripcion-cita {
+            text-align: center;
+            color: $rojo;
+        }
+    }
+}

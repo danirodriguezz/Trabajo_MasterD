@@ -1,0 +1,21 @@
+.accion {
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.acciones {
+    a {
+        margin-bottom: 1rem;
+    }
+    display: block;
+
+    @include tablet {
+        a {
+            margin: 0;
+        }
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

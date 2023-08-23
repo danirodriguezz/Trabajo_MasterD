@@ -1,0 +1,68 @@
+.barra {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 2rem;
+    align-items: center;
+    @include tablet {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.navegacion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    background-color: $grisOscuro;
+    padding: 2rem;
+    position: fixed;
+    top: 9rem;
+    width: 100%;
+    height: calc(100% - 9rem);
+    left: 100%;
+    transition: left .5s linear;
+    @include tablet {
+        position: inherit;
+        padding: 0;
+        width: auto;
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+    }
+    a {
+        color: $blanco;
+        text-decoration: none;
+        font-size: 1.8rem;
+        display: block;
+        text-align: center;
+        text-transform: uppercase;
+        height: auto;
+        svg {
+            margin-top: .9rem;
+        }
+    }
+    a:hover {
+        color: $amarillo;
+    }
+}
+
+// Menu de Hamburguesa
+.mobile-menu {
+    @include tablet {
+        display: none;
+    }
+    img {
+        width: 4rem;
+    }
+}
+
+.mostrar {
+    left: 0;
+    z-index: 1;
+}
